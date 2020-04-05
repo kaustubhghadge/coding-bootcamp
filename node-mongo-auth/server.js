@@ -19,7 +19,20 @@ app.post('/v1/user/signup',(req,res)=>{
         if (error) res.status(400).send(error);
         res.status(200).send(response);
     })
-})
+});
+
+app.post('/v1/user/login',(req,res)=>{
+    User.findOne({'email':req.body.email},(err,user)=>{
+        if(!user) res.status(400).send('Invalid username or password')
+        else{
+            user.comparePassword(req.body.password, (err, isMatch)=>{
+                if(err) throw err;
+                if(!isMatch) return res.status(400).send('Invalid username or password')
+                res.status(200).send('Logged in successfully')
+            });
+        } 
+    });
+});
 
 const server = app.listen(process.env.PORT || 3000, () => {
     console.log(`Listening on port ${server.address().port}`);
