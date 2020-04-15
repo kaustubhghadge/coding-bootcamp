@@ -1,0 +1,7 @@
+Create a simple calculator
+
+1. Learn how to manipulate DOM for getting the information
+2. Learn how to print out the results on to the DOM
+3. Understand how to use conditional statements
+4. Understand depending on conditional statements the operations to be executed.
+5. Understand events handling using JavaScript
