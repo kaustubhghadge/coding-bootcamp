@@ -1,5 +1,6 @@
 require('dotenv').config()
 const express = require("express");
+var cors = require('cors');
 const BodyParser =  require("body-parser");
 const mongoose = require('mongoose');
 const User =  require("./Models/User");
@@ -8,6 +9,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true });
 
 const app = express();
 
+app.use(cors());
 app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({ extended: true }));
 
