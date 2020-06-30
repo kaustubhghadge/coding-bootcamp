@@ -1,11 +1,10 @@
 $(document).ready(function(){
-    $("#but_submit").click(function(){
-        var username = $("#txt_uname").val().trim();
-        var password = $("#txt_pwd").val().trim();
-
+    $("#login_form").on("submit", function( event ) {
+        var username = $("#user_email").val().trim();
+        var password = $("#user_password").val().trim();
         if( username != "" && password != "" ){
             $.ajax({
-                url:'http://localhost:3000/v1/user/login',
+                url:'http://localhost:3000/login',
                 type:'post',
                 contentType: 'application/x-www-form-urlencoded',
                 data:{email:username,password:password},
@@ -21,5 +20,6 @@ $(document).ready(function(){
                 }
             });
         }
-    });
+        event.preventDefault();
+      }); 
 });
