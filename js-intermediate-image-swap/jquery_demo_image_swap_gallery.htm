@@ -3,52 +3,46 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>jQuery Demo - Ultimate Image Swap Gallery</title>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-
-<style type="text/css">
-body,html,div,blockquote,img,label,p,h1,h2,h3,h4,h5,h6,pre,ul,ol,li,dl,dt,dd,form,a,fieldset,input,th,td{border:0;outline:none;margin:0;padding:0;}
-body{height:100%;background:#fff;color:#1f1f1f;font-family:"Lucida Sans Unicode","Lucida Grande",Arial,Verdana,sans-serif;font-size:13px;padding:7px 0;}
-ul{list-style:none;}
-.text-center {text-align: center; padding: 10px 0;}
-
-#gallery {width: 660px; margin: 0 auto;}
-#gallery ul {padding-left: 10px;}
-#gallery li {display: inline; margin-right: 3px;}
-#gallery #main-img {background: url(bg_img.png) no-repeat 0 0; padding: 26px;}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </style>
 <script type="text/JavaScript">
-// prepare the form when the DOM is ready 
-$(document).ready(function() {
-	$("#gallery li img").hover(function(){
-		$('#main-img').attr('src',$(this).attr('src').replace('thumb/', ''));
-	});
-	var imgSwap = [];
-	 $("#gallery li img").each(function(){
-		imgUrl = this.src.replace('thumb/', '');
-		imgSwap.push(imgUrl);
-	});
-	$(imgSwap).preload();
+$(document).ready(function($){
+
+$('.image1').on({
+     'mouseover': function(){
+         $('#change-image').attr('src','https://images.unsplash.com/photo-1453033999175-4ed3ad562807?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=80');
+     }
+ });
+ 
+$('.image2').on({
+     'mouseover': function(){
+         $('#change-image').attr('src','https://images.unsplash.com/photo-1560715630-7fb852953a99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=80');
+     }
+ });
+ 
+$('.image3').on({
+     'mouseover': function(){
+         $('#change-image').attr('src','https://images.unsplash.com/photo-1533907650686-70576141c030?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=80');
+     }
+ });
+ 
+$('.image4').on({
+     'mouseover': function(){
+         $('#change-image').attr('src','https://images.unsplash.com/photo-1462143338528-eca9936a4d09?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=80');
+     }
+ });
 });
-$.fn.preload = function() {
-    this.each(function(){
-        $('<img/>')[0].src = this;
-    });
-}
 </script>
 </head>
 <body>
-<div class="wrap">
-  <h2 class="text-center">jQuery Demo: Ultimate Image Swap Gallery</h2>
-	<div id="gallery">
-	<img src="gallery/img_1.jpg" alt="" id="main-img" />
-	<ul>
-	  <li><img src="gallery/thumb/img_1.jpg" alt="" /></li>
-	  <li><img src="gallery/thumb/img_2.jpg" alt="" /></li>
-	  <li><img src="gallery/thumb/img_3.jpg" alt="" /></li>
-	  <li><img src="gallery/thumb/img_4.jpg" alt="" /></li>
-	  <li><img src="gallery/thumb/img_5.jpg" alt="" /></li>
-	  <li><img src="gallery/thumb/img_6.jpg" alt="" /></li>
-	</ul>
+<div class="container">
+	<div class="button-container">
+		<button class="image1">Load Image 1</button>
+		<button class="image2">Load Image 2</button>
+		<button class="image3">Load Image 3</button>
+		<button class="image4">Load Image 4</button>
+		</div>
+		<img id="change-image" src="https://images.unsplash.com/photo-1453033999175-4ed3ad562807?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=80" alt="Black Image" />
 </div>
 </body>
 </html>
