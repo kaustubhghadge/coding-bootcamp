@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Login Panel</title>
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+        <script type="text/javascript" src="main.js"></script>
+    </head>
+
+<body>
+    <div id="slide-panel">
+        <h2>Login</h2>
+        <div class="loginform">
+            <div class="formdetails">
+                <form action="#">
+                    <label for="log">Username : </label>
+                    <input type="text" name="log" id="log" value="" size="20" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <label for="pwd">Password : </label>
+                    <input type="password" name="pwd" id="pwd" size="20" />
+                    <input type="submit" name="submit" value="Login" class="button" />
+                    <label for="rememberme">
+                        <input name="rememberme" id="rememberme" type="checkbox" checked="checked" value="forever" /> Remember me</label>
+                    <input type="hidden" name="redirect_to" value=""
+                    />
+                </form>
+            </div>
+            <div class="loginregister">
+                <a href="#">Register</a> |
+                <a href="#">Recover password</a>
+            </div>
+        </div>
+    </div>
+    <div class="slide">
+        <a href="#" class="btn-slide">
+            Login
+        </a>
+    </div>
+</body>
+</html>

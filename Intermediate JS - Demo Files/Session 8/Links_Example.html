@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Links</title>
+</head>
+<body>
+    <a href="http://www.google.com">Click This Link</a>
+    <script>
+        $(document).ready(function(){
+            //$("a[href^='http://']").attr("target","_blank");
+            $('a').click(function(){
+                window.open(this.href);
+                return false;
+            });
+            
+        });
+    </script>
+</body>
+</html>

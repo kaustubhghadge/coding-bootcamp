@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style>
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+	  font-family: Helvetica, Arial, sans-serif;
+}
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#mainnav {
+    background:#007FFF;
+    color: #fff;
+    font-weight: bold;
+    text-transform:uppercase;
+    letter-spacing: .05em;
+}
+
+#mainnav #menu {
+    display: none;
+    padding: .8em 1.5em;
+    cursor: pointer;
+}
+
+
+#mainnav ul {
+    display: block;
+    margin: 0;
+    text-align: center;
+}
+
+#mainnav ul li {
+    margin: 0;
+    list-style: none;
+    display: inline-block;
+}
+
+#mainnav ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: .9em 1.5em .8em 1.5em;
+}
+
+#mainnav ul li a:hover {
+    color: #fff;
+    background: #86BEF8;
+}
+
+.content {
+	  padding: 1.5em;
+}
+
+@media all and (min-width: 768px) and (max-width: 992px) {
+
+}
+
+@media all and (max-width: 767px) {
+	
+    #mainnav #menu {
+        display: block;
+    }
+
+    #mainnav ul {
+        display: none;
+        background: #666;
+        padding: 1em;
+        text-align: left;
+    }
+    #mainnav ul li {
+        display: block;
+    }
+
+    #mainnav ul li a {
+        display: block;
+        padding: .75em 1.5em .5em 1.5em;
+    }
+
+}
+  </style>
+  <title>Navigation Example</title>
+</head>
+<body>
+  <nav id="mainnav" class="group">
+      <div id="menu">&#x2261; Menu</div>
+      <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Company</a></li>
+          <li><a href="#">Contact</a></li>
+      </ul>
+  </nav>
+  <script>
+    $(document).ready(function() {
+     $('#menu').on('click',function(event){
+         $('#mainnav ul').slideToggle();
+     });
+
+     $(window).resize(function(){  
+         var w = $(window).width();  
+         if(w > 768) {  
+             $('#mainnav ul').removeAttr('style');  
+         }  
+     });
+ });
+  </script>
+</body>
+</html>

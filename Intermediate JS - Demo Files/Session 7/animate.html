@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+  </style>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script type='text/javascript'>
+$(document).ready(function(){
+   setInterval(moveArrow,2000);
+});
+function moveArrow(){
+   $("div").animate({left:'500px'}).fadeOut().animate({left:'10px'}).fadeIn();
+}
+
+</script>
+</head>
+<body>
+  <button>Animate</button>
+  <br />
+  <br />
+  <div class="arrow right"
+    style="height: 100px; top: 300px; width: 100px; position: absolute;">
+  </div>
+</body>
+</html>
